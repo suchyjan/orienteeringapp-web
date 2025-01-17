@@ -34,16 +34,20 @@
     const primaryLanguage = userLanguage.split('-')[0].toLowerCase();
     const currentPath = window.location.pathname;
   
-    // Zamezení nekonečného přesměrování
-    if (!window.location.search.includes('redirected=true')) {
-      const redirectPath = supportedLanguages.includes(primaryLanguage)
-        ? languagePaths[primaryLanguage]
-        : languagePaths['en'];
+    // Přesměrování na základě jazyka
+    const redirectPath = supportedLanguages.includes(primaryLanguage)
+      ? languagePaths[primaryLanguage]
+      : languagePaths['en'];
   
-      if (currentPath !== redirectPath) {
-        const newUrl = `${redirectPath}?redirected=true`;
-        window.location.replace(newUrl);
-      }
+    if (currentPath !== redirectPath) {
+      // Přesměrování na správnou jazykovou verzi
+      window.location.replace(redirectPath);
+  
+      // Po přesměrování odstranění parametru z URL
+      window.addEventListener('load', () => {
+        const cleanUrl = `${window.location.origin}${redirectPath}`;
+        window.history.replaceState(null, '', cleanUrl);
+      });
     }
   </script>
 
