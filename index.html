@@ -25,29 +25,23 @@
     const userLanguage = navigator.language || navigator.languages[0] || 'en';
     const supportedLanguages = ['cs', 'en', 'sv', 'fi'];
     const languagePaths = {
-      cs: './',
-      en: './en',
-      sv: './sv',
-      fi: './fi',
+      cs: '/',
+      en: '/en',
+      sv: '/sv',
+      fi: '/fi',
     };
   
     const primaryLanguage = userLanguage.split('-')[0].toLowerCase();
-    const currentPath = window.location.pathname;
-  
-    // Přesměrování na základě jazyka
     const redirectPath = supportedLanguages.includes(primaryLanguage)
       ? languagePaths[primaryLanguage]
       : languagePaths['en'];
   
-    if (currentPath !== redirectPath) {
-      // Přesměrování na správnou jazykovou verzi
-      window.location.replace(redirectPath);
+    const currentPath = window.location.pathname;
   
-      // Po přesměrování odstranění parametru z URL
-      window.addEventListener('load', () => {
-        const cleanUrl = `${window.location.origin}${redirectPath}`;
-        window.history.replaceState(null, '', cleanUrl);
-      });
+    // Přesměruj pouze, pokud aktuální cesta není správná
+    if (currentPath !== redirectPath) {
+      const newUrl = `${window.location.origin}${redirectPath}`;
+      window.location.replace(newUrl);
     }
   </script>
 
