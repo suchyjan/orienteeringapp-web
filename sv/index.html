@@ -28,14 +28,19 @@
       sv: '/sv/index.html',
       fi: '/fi/index.html',
     };
+  
     const primaryLanguage = userLanguage.split('-')[0].toLowerCase();
-
-    if (!window.location.pathname.includes(primaryLanguage)) {
+    const currentPath = window.location.pathname;
+  
+    // Zamezení nekonečného přesměrování
+    if (!window.location.search.includes('redirected=true')) {
       const redirectPath = supportedLanguages.includes(primaryLanguage)
         ? languagePaths[primaryLanguage]
         : languagePaths['en'];
-      if (window.location.pathname !== redirectPath) {
-        window.location.replace(redirectPath);
+  
+      if (currentPath !== redirectPath) {
+        const newUrl = `${redirectPath}?redirected=true`;
+        window.location.replace(newUrl);
       }
     }
   </script>
