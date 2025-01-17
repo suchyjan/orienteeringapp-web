@@ -25,10 +25,10 @@
     const userLanguage = navigator.language || navigator.languages[0] || 'en';
     const supportedLanguages = ['cs', 'en', 'sv', 'fi'];
     const languagePaths = {
-      cs: './index.html',
-      en: './en/index.html',
-      sv: './sv/index.html',
-      fi: './fi/index.html',
+      cs: './',
+      en: './en',
+      sv: './sv',
+      fi: './fi',
     };
   
     const primaryLanguage = userLanguage.split('-')[0].toLowerCase();
