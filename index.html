@@ -10,11 +10,11 @@
 
   <title>Orisym - Symboly pro orientační běh</title>
 
-  <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="shortcut icon" href="./favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
-  <link rel="manifest" href="./site.webmanifest" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <link rel="preload" as="image" href="sc1.webp">
 
@@ -23,19 +23,24 @@
     const userLanguage = navigator.language || navigator.languages[0] || 'en';
     const supportedLanguages = ['cs', 'en', 'sv', 'fi'];
     const languagePaths = {
-      cs: './index.html',
-      en: './en/index.html',
-      sv: './sv/index.html',
-      fi: './fi/index.html',
+      cs: '/index.html',
+      en: '/en/index.html',
+      sv: '/sv/index.html',
+      fi: '/fi/index.html',
     };
+  
     const primaryLanguage = userLanguage.split('-')[0].toLowerCase();
-
-    if (!window.location.pathname.includes(primaryLanguage)) {
+    const currentPath = window.location.pathname;
+  
+    // Zamezení nekonečného přesměrování
+    if (!window.location.search.includes('redirected=true')) {
       const redirectPath = supportedLanguages.includes(primaryLanguage)
         ? languagePaths[primaryLanguage]
         : languagePaths['en'];
-      if (window.location.pathname !== redirectPath) {
-        window.location.replace(redirectPath);
+  
+      if (currentPath !== redirectPath) {
+        const newUrl = `${redirectPath}?redirected=true`;
+        window.location.replace(newUrl);
       }
     }
   </script>
@@ -314,10 +319,10 @@
       <div class="container">
         <nav>
           <ul class="language-switcher">
-            <li><a href="./index.html" lang="cs" hreflang="cs">Čeština</a></li>
-            <li><a href="./en/index.html" lang="en" hreflang="en">English</a></li>
-            <li><a href="./sv/index.html" lang="sv" hreflang="sv">Svensk</a></li>
-            <li><a href="./fi/index.html" lang="fi" hreflang="fi">Suomi</a></li>
+            <li><a href="/index.html" lang="cs" hreflang="cs">Čeština</a></li>
+            <li><a href="/en/index.html" lang="en" hreflang="en">English</a></li>
+            <li><a href="/sv/index.html" lang="sv" hreflang="sv">Svensk</a></li>
+            <li><a href="/fi/index.html" lang="fi" hreflang="fi">Suomi</a></li>
           </ul>
         </nav>
       </div>
