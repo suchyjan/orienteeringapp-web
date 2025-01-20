@@ -220,7 +220,7 @@
       position: relative;
       width: 300px;
       margin: 0 auto;
-      overflow: hidden;
+      /* overflow: hidden; */
     }
     
     .screenshots {
@@ -231,7 +231,12 @@
     .screenshots img {
       min-width: 300px;
       border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      /* box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2); */
+      border-width: 2px;
+      border-style: solid;
+      box-sizing: border-box;
+      border-color: silver;
       display: none;
     }
 
