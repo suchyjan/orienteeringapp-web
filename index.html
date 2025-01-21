@@ -405,12 +405,22 @@
       display: inline-block; /* Zaručí blokové chování textu */
       transform: translateY(3px) translateX(3px);
       line-height: 1; /* Zrušení výšky řádku */
+      -webkit-appearance: none;  /* Zamezí automatickému nahrazení ikony systémovou */
+      appearance: none;           /* Standardní podpora pro všechny prohlížeče */
+      background: none;           /* Odstraní defaultní pozadí */
+      border: none;               /* Odstraní případný rámeček */
+      cursor: pointer;            /* Nastaví kurzor na pointer */
     }
 
     .play-pause-overlay.play span {
       display: inline-block; /* Zaručí blokové chování textu */
       transform: translateY(0px);
       line-height: 1; /* Zrušení výšky řádku */
+      -webkit-appearance: none;  /* Zamezí automatickému nahrazení ikony systémovou */
+      appearance: none;           /* Standardní podpora pro všechny prohlížeče */
+      background: none;           /* Odstraní defaultní pozadí */
+      border: none;               /* Odstraní případný rámeček */
+      cursor: pointer;            /* Nastaví kurzor na pointer */
     }
 
     @media (min-width: 768px) {
