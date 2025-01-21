@@ -372,10 +372,6 @@
 
     .play-pause-overlay {
       position: absolute;
-      -webkit-appearance: none;  /* Zamezí automatickému nahrazení ikony systémovou */
-      appearance: none;           /* Standardní podpora pro všechny prohlížeče */
-      background: none;           /* Odstraní defaultní pozadí */
-      border: none;               /* Odstraní případný rámeček */
       cursor: pointer;            /* Nastaví kurzor na pointer */
       top: 50%;
       left: 50%;
@@ -392,30 +388,31 @@
       align-items: center; /* Svislé zarovnání do středu */
       justify-content: center; /* Vodorovné zarovnání do středu */
       z-index: 10; /* Vrstva nad ostatními prvky */
-      pointer-events: none; /* Zabrání interakcím s ikonou */
+      pointer-events: none;
       transition: opacity 0.3s ease; /* Hladký přechod opacity */
     }
 
+    .play-pause-overlay span {
+      display: flex; /* Umožňuje span fungovat jako flexbox */
+      align-items: center; /* Svislé zarovnání obrázku */
+      justify-content: center; /* Vodorovné zarovnání obrázku */
+    }
+
+    .play-pause-overlay svg {
+      width: 100%; /* Přizpůsobí šířku rodičovskému prvku */
+      height: 100%; /* Přizpůsobí výšku rodičovskému prvku */
+      object-fit: contain; /* Zachová poměr stran a přizpůsobí obrázek */
+    }
+
+
     .play-pause-overlay.pause {
       /* color: #0a0; */
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.2);
     }
     
     .play-pause-overlay.play {
       /* color: #a00; */
-      background: rgba(0, 0, 0, 0.4);
-    }
-
-    .play-pause-overlay.pause span {
-      display: inline-block; /* Zaručí blokové chování textu */
-      transform: translateY(3px) translateX(3px);
-      line-height: 1; /* Zrušení výšky řádku */
-    }
-
-    .play-pause-overlay.play span {
-      display: inline-block; /* Zaručí blokové chování textu */
-      transform: translateY(0px);
-      line-height: 1; /* Zrušení výšky řádku */
+      background: rgba(0, 0, 0, 0.2);
     }
 
     @media (min-width: 768px) {
@@ -507,14 +504,6 @@
             <div class="play-pause-overlay"></div> <!-- Přidaná vrstva pro play/pause ikonu -->
             <!-- <div id="playPauseButton" class="play-pause-icon pause" title="Přehrát/Pozastavit"></div> -->
             <div class="dots">
-              <!-- <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span> -->
             </div>
           </div>
         </section>
@@ -589,14 +578,17 @@
       }
     }
 
-    // Zobrazení overlay (play/pause)
+    
     function showOverlay(type) {
-      // Vložení ikony do <span>
-      playPauseOverlay.innerHTML = `<span>${type === 'pause' ? '▶' : '❚❚'}</span>`;
+      const svgPlay = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path fill="#fff" d="M8 5v14l11-7z"/></svg>`;
+  
+      const svgPause = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path fill="#fff" d="M6 6h4v12H6zm8 0h4v12h-4z"/></svg>`;
+      playPauseOverlay.innerHTML = `<span>${type === 'pause' ? svgPlay : svgPause}</span>`;
       playPauseOverlay.className = `play-pause-overlay ${type}`;
       playPauseOverlay.style.opacity = '1';
 
-      // Skrytí overlay po 1 sekundě
       setTimeout(() => {
         playPauseOverlay.style.opacity = '0';
       }, 1000);
