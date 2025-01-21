@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Orisym - Symboly pro orientační běh",
+  "short_name": "Orisym",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
