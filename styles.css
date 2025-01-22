@@ -219,9 +219,11 @@ header {
     text-size-adjust: 100%;
     list-style: none;
     padding: 0;
+    font-size: 1rem;
 }
 
 .intro ul li {
+    font-size: 1rem;
     margin: 0.5rem 0;
 }
 
