@@ -354,4 +354,7 @@ footer.show {
         flex: 0 1 auto;
         margin: 0 2rem;
     }
+    body {
+        -webkit-text-size-adjust: none;
+    }
 }
