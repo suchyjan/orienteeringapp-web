@@ -12,6 +12,8 @@ body {
     overflow-x: hidden;
     overscroll-behavior: none;
     /* Zamezí overscroll efektu */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 main {
@@ -213,6 +215,7 @@ header {
 }
 
 .intro ul {
+    -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     list-style: none;
     padding: 0;
