@@ -14,18 +14,17 @@
   <meta property="og:title" content="Orisym - Symboly pro orientační běh">
   <meta property="og:description" content="Naučte se rozpoznávat symboly pro orientační běh, mapové klíče - popisy kontrol. Zlepšete své dovednosti v navigaci a rozhodování.">
   <meta property="og:image" content="/orisym-featured-image.png">
-  <meta property="og:type" content="website"> <!-- Určuje typ obsahu, například 'website' nebo 'article' -->
-  <meta property="og:url" content="https://www.orisym.cz"> <!-- URL stránky -->
-  <meta property="og:site_name" content="Orisym"> <!-- Název webu nebo aplikace -->
-  <meta property="og:locale" content="cs_CZ"> <!-- Lokální nastavení pro jazyk a zemi -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.orisym.cz">
+  <meta property="og:site_name" content="Orisym">
+  <meta property="og:locale" content="cs_CZ">
 
   <!-- X Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image"> <!-- Určuje typ X karty (summary, summary_large_image, nebo jiný typ) -->
-  <meta name="twitter:title" content="Orisym - Symboly pro orientační běh"> <!-- Titulek pro Twitter -->
-  <meta name="twitter:description" content="Naučte se rozpoznávat symboly pro orientační běh, mapové klíče - popisy kontrol. Zlepšete své dovednosti v navigaci a rozhodování."> <!-- Popis pro Twitter -->
-  <meta name="twitter:image" content="/web-app-manifest-512x512.png"> <!-- Odkaz na obrázek pro Twitter -->
-  <meta name="twitter:url" content="https://www.orisym.cz"> <!-- URL stránky -->
-  <!-- <meta name="twitter:site" content="@OrisymApp">  -->   <!-- Twitter handle vašeho účtu (pokud existuje) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orisym - Symboly pro orientační běh">
+  <meta name="twitter:description" content="Naučte se rozpoznávat symboly pro orientační běh, mapové klíče - popisy kontrol. Zlepšete své dovednosti v navigaci a rozhodování.">
+  <meta name="twitter:image" content="/web-app-manifest-512x512.png">
+  <meta name="twitter:url" content="https://www.orisym.cz">
 
   <title>Orisym - Symboly pro orientační běh</title>
 
@@ -37,418 +36,12 @@
 
   <link rel="preload" as="image" href="sc1.webp">
 
-  <script>
-    // Detekce preferovaného jazyka uživatele
-    const userLanguage = navigator.language || navigator.languages[0] || 'en-US';
-    
-    // Seznam podporovaných jazyků a jejich cesty
-    const supportedLanguages = ['cs', 'en', 'sv', 'fi'];
-    const languagePaths = {
-      cs: '/',
-      en: '/en',
-      sv: '/sv',
-      fi: '/fi',
-    };
-    
-    // Zjištění hlavního jazyka a přiřazení správné cesty
-    const primaryLanguage = userLanguage.split('-')[0].toLowerCase();
-    const redirectPath = supportedLanguages.includes(primaryLanguage)
-      ? languagePaths[primaryLanguage]
-      : languagePaths['en']; // Defaultně angličtina
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/langHelper.js"></script>
   
-    // Získání aktuální cesty
-    const currentPath = window.location.pathname;
-  
-    // Přesměrování pouze, pokud aktuální cesta není správná
-    if (currentPath !== redirectPath) {
-      const newUrl = `${window.location.origin}${redirectPath}`;
-      // DO NOT REDIRECT NOW
-      //window.location.replace(newUrl); // Přesměrování na správnou URL
-    }
-  
-    // Získání doplňkového jazyka (část za pomlčkou), pokud existuje
-    const languageVariant = userLanguage.split('-')[1]?.toLowerCase() || primaryLanguage;
-
-    // Generování správné URL pro App Store s parametrem 'l' podle detekovaného jazyka
-    const appStoreUrl = `https://apps.apple.com/${languageVariant}/app/id6553980733?l=${primaryLanguage}`;
-  
-    // Funkce pro aktualizaci href odkazu
-    const updateAppStoreLink = () => {
-      const appStoreLink = document.querySelector('.app-store');
-      if (appStoreLink) {
-        appStoreLink.href = appStoreUrl; // Aktualizuj href odkazu
-      } else {
-        // Pokud odkaz ještě neexistuje, opakuj pokus po krátké pauze
-        setTimeout(updateAppStoreLink, 100); // Zkusíme to znovu po 100ms
-      }
-    };
-  
-    // Zavoláme funkci pro aktualizaci odkazu, jakmile je DOM připraven
-    document.addEventListener('DOMContentLoaded', updateAppStoreLink);
-  </script>
-
-  <style>
-    html {
-      overscroll-behavior: none; /* Zamezí overscroll efektu */
-    }
-    body {
-      font-family: Arial, Roboto, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      overflow-x:hidden;
-      overscroll-behavior: none; /* Zamezí overscroll efektu */
-    }
-
-    main {
-      padding-top: 3rem;
-      /* overscroll-behavior: contain; */
-    }
-
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      min-width: fit-content;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;     
-      z-index: 1000;
-      background: #168B52;
-      color: white;
-      text-align: center;
-    }
-
-    .download-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      /* gap: 2rem; */
-      /* margin-top: 1rem; */
-    }
-
-    .download-item {
-      text-align: center;
-    }
-
-    .btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      min-height: 9rem;
-      min-width: 12rem;
-    }
-
-    .app-store img {
-        padding-top: 0.7rem;
-        padding-bottom: 0.8rem;
-        height: 3rem;
-    }
-
-    .google-play img {
-        padding-top: 0.7rem;
-        height: 3rem;
-        padding-bottom: 0.8rem;
-    }
-
-    /* .google-play {
-    }
-
-    .app-store {
-    }
-
-    .qr-code {
-    } */
-
-    .container {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding-right: 1rem;
-    }
-
-    .logo {
-      width: 8rem;
-      height: auto;
-    }
-
-    .language-switcher {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      gap: 1rem;
-    }
-
-    .language-switcher li a {
-      text-decoration: none;
-      color: white;
-    }
-
-    .flex-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .gallery, .intro {
-      text-align: center;
-      margin: 2rem 1rem;
-    }
-
-    .qr-code img {
-      width: 8rem;
-      height: auto;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .hero {
-      text-align: center;
-      background: #168B52;
-      color: white;
-      padding-bottom: 3rem;
-      padding-top: 1.7rem;
-      width: auto;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: 3.2rem;
-    }
-
-    .hero h2 {
-      margin: 0;
-    }
-
-    .gallery {
-      text-align: center;
-      margin-bottom: 2rem;
-      padding-top: 4rem;
-    }
-
-    .gallery h2 {
-      margin-bottom: 1rem;
-    }
-
-    .gallery-container {
-      position: relative;
-      width: 300px;
-      margin: 0 auto;
-      /* overflow: hidden; */
-    }
-    
-    .screenshots {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .screenshots img {
-      min-width: 300px;
-      border-radius: 10px;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-      /* box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2); */
-      border-width: 2px;
-      border-style: solid;
-      box-sizing: border-box;
-      border-color: silver;
-      display: none;
-    }
-
-    .screenshots img.active {
-      display: block;
-    }
-
-    .nav-buttons {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      z-index: 10;
-    }
-
-    .nav-button {
-      width: 14px;
-      height: 26px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      padding: 7px;
-      transition: background 0.3s;
-      opacity: 0.5
-    }
-
-    .nav-button:hover {
-      background: rgba(0, 0, 0, 0.2);
-    }
-
-    .prev {
-      transform: scaleY(1);
-    }
-
-    .next {
-      transform: scaleY(1);
-    }
-
-    .dots {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin: 0 5px;
-      background-color: #ccc;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    .dot.active {
-      background-color: orange;
-    }
-
-    .intro {
-      text-align: center;
-      margin-top: 0rem;
-      padding-top: 0rem;
-      margin-bottom: 9rem;
-    }
-
-    .intro h2 {
-      margin-bottom: 1rem;
-    }
-
-    .intro ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .intro ul li {
-      margin: 0.5rem 0;
-    }
-
-    footer {
-      background: silver;
-      color: grey;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      text-align: center;
-      position: fixed;
-      bottom: -100%;
-      left: 0;
-      width: 100%;
-      font-size: 0.9rem;
-      transition: bottom 0.3s ease;
-    }
-
-    footer span {
-      margin-left: 0.8rem;
-      margin-right: 0.8rem;
-    }
-
-    footer a:visited {
-      color:grey
-    }
-
-    footer a {
-      color: grey;
-    }
-
-    footer.show {
-      bottom: 0;
-    }
-
-    .play-pause-overlay {
-      position: absolute;
-      cursor: pointer;            /* Nastaví kurzor na pointer */
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100px; /* Šířka kruhu */
-      height: 100px; /* Výška kruhu */
-      border-radius: 50%; /* Zajistí kruhový tvar */
-      background: rgba(0, 0, 0, 0.5); /* Poloprůhledné černé pozadí */
-      color: white; /* Barva textu */
-      font-size: 40px; /* Velikost ikony */
-      /* font-weight: bold;  */
-      /* Tučný text pro lepší čitelnost */
-      display: flex; /* Flexbox pro zarovnání obsahu */
-      align-items: center; /* Svislé zarovnání do středu */
-      justify-content: center; /* Vodorovné zarovnání do středu */
-      z-index: 10; /* Vrstva nad ostatními prvky */
-      pointer-events: none;
-      transition: opacity 0.3s ease; /* Hladký přechod opacity */
-    }
-
-    .play-pause-overlay span {
-      display: flex; /* Umožňuje span fungovat jako flexbox */
-      align-items: center; /* Svislé zarovnání obrázku */
-      justify-content: center; /* Vodorovné zarovnání obrázku */
-    }
-
-    .play-pause-overlay svg {
-      width: 100%; /* Přizpůsobí šířku rodičovskému prvku */
-      height: 100%; /* Přizpůsobí výšku rodičovskému prvku */
-      object-fit: contain; /* Zachová poměr stran a přizpůsobí obrázek */
-    }
-
-
-    .play-pause-overlay.pause {
-      /* color: #0a0; */
-      background: rgba(0, 0, 0, 0.2);
-    }
-    
-    .play-pause-overlay.play {
-      /* color: #a00; */
-      background: rgba(0, 0, 0, 0.2);
-    }
-
-    @media (min-width: 768px) {
-      .download-buttons {
-        gap: 4rem;
-      }
-      /* Prohození pořadí */
-      .intro {
-        /* margin-top: 3rem; */
-        padding-top: 3rem;
-        order: 1; /* Úvod až jako druhý */
-        text-align: left;
-        /* text-align: right; */
-        /* justify-self: flex-end; */
-      }
-
-      .gallery {
-        order: 2; /* Galerie jako první */
-        /* justify-self: flex-start; */
-      }
-      .flex-container {
-        flex-direction: row;
-        justify-content: center;
-        padding-bottom: 6rem
-      }
-      .gallery, .intro {
-        /* flex: 1; */
-        flex: 0 1 auto;
-        margin: 0 2rem;
-      }
-    }
-  </style>
 </head>
 <body>
   <div class="wrapper">
-    <!-- Hlavní hlavička -->
     <header>
       <div class="container">
         <nav>
@@ -462,16 +55,17 @@
       </div>
     </header>
 
-    <!-- Hlavní obsah -->
     <main>
       <section class="hero">
         <h1>Orisym</h1>
         <img src="/logo-orisym.webp" alt="Logo" class="logo" width="128" height="128">
-        <h2 style="margin-bottom: 0px;padding-bottom: 0px">Symboly pro orientační běh do kapsy</h2>
+        <h2 style="margin-bottom: 0px;padding-bottom: 0px">Orientujte se s přehledem</h2>
+        <h3 style="font-variant-caps: petite-caps;font-weight: 200;margin-top:0px;margin-bottom: 0px;padding-bottom: 0px;">Výuka, testování a katalog symbolů pro orientační běh</h3>
         <div class="download-buttons">
           <div class="download-item">
             <a href="https://play.google.com/store/apps/details?id=io.ionic.orienteering" class="btn google-play" target="_blank">
-              <img src="./google-play-logo.svg" alt="Google Play" width="186" height="48">Stáhnout z Google Play
+              <img src="./google-play-logo.svg" alt="Google Play" width="186" height="48">
+              <!-- Stáhnout z Google Play -->
             </a>
             <div class="qr-code">
               <img src="/qr-google-play.svg" alt="QR kód pro Google Play" width="130" height="130">
@@ -479,7 +73,8 @@
           </div>
           <div class="download-item">
             <a href="https://apps.apple.com/app/id6553980733" class="btn app-store" target="_blank">
-              <img src="./app-store-logo.svg" alt="App Store" width="143.58" height="48">Stáhnout z App Store
+              <img src="./app-store-logo.svg" alt="App Store" width="143.58" height="48">
+              <!-- Stáhnout z App Store -->
             </a>
             <div class="qr-code">
               <img src="/qr-app-store.svg" alt="QR kód pro App Store" width="130" height="130">
@@ -501,152 +96,41 @@
               <img loading="lazy" src="sc7.webp" alt="Screenshot aplikace 7" width="296" height="644.75">
               <img loading="lazy" src="sc8.webp" alt="Screenshot aplikace 8" width="296" height="644.75">
             </div>
-            <div class="play-pause-overlay"></div> <!-- Přidaná vrstva pro play/pause ikonu -->
-            <!-- <div id="playPauseButton" class="play-pause-icon pause" title="Přehrát/Pozastavit"></div> -->
+            <div class="play-pause-overlay"></div>
             <div class="dots">
             </div>
           </div>
         </section>
 
         <section class="intro">
-          <h2>Co aplikace nabízí?</h2>
+          <h2>Proč Orisym?</h2>
+          <ul style="line-height: 2">
+            <li style="padding-bottom: 10px">Naučíte se <strong>význam každého symbolu</strong> pro orientační běh v detailu</li>
+            <li style="padding-bottom: 10px">Při <strong>testování</strong> svých znalostí zjistíte, jak na tom jste a vylepšíte své znalosti</li>
+            <li style="padding-bottom: 10px">V katalogu <strong>mapových</strong> symbolů a symbolů pro umístění <strong>kontrol</strong> najdete detailní popis jejich významu</li>
+            <li style="padding-bottom: 10px">Objevíte <strong>provázanost</strong> obou typů symbolů s jejich vazbami</li>
+            <li style="padding-bottom: 10px">Zlepšíte svou <strong>prostorovou orientaci</strong> pomocí rozpoznávání terénu dle vrstevnic</li>
+            <li style="padding-bottom: 10px">Pro běh aplikace není zapotřebí internet. Pracuje <strong>offline</strong>.</li>
+          </ul>
+
+          <!-- <h2>Co aplikace nabízí?</h2>
           <ul>
             <li>Katalog <strong>mapových</strong> symbolů</li>
             <li>Katalog symbolů pro popis umístění <strong>kontrol</strong></li>
             <li><strong>Testování</strong> znalostí obou typů symbolů</li>
             <li>Procvičování poznávání <strong>terénu dle vrstevnic</strong></li>
             <li>Funguje <strong>offline</strong></li>
-          </ul>
+          </ul> -->
         </section>
       </div>
     </main>
 
-    <!-- Patička -->
     <footer id="footer">
       <span>&copy; 2025 Jan Suchý | Stránka nepoužívá cookies</span>
-      <!-- <span>&copy; 2025 Jan Suchý | <a href="https://suchyjan.github.io/orienteeringapp/privacy.html">Ochrana osobních údajů</a> | Stránka nepoužívá cookies</span> -->
     </footer>
   </div>
 
-  <script>
-    let currentIndex = 0;
-    let autoPlayInterval = null;
-    const galleryImages = document.querySelectorAll('.screenshots img');
-    const playPauseOverlay = document.querySelector('.play-pause-overlay');
-    const dotsContainer = document.querySelector('.dots');
+  <script src="/galleryHelper.js"></script>
 
-    // Funkce pro zobrazení konkrétního obrázku
-    function showImage(index) {
-      galleryImages.forEach((img, i) => {
-        img.classList.toggle('active', i === index);
-      });
-      updateDots(index);
-    }
-
-    // Funkce pro přepnutí na další obrázek
-    function nextImage() {
-      currentIndex = (currentIndex + 1) % galleryImages.length;
-      showImage(currentIndex);
-    }
-
-    // Spustí automatické přehrávání
-    function startAutoPlay() {
-      if (!autoPlayInterval) {
-        autoPlayInterval = setInterval(nextImage, 3000);
-        showOverlay('pause');
-      }
-    }
-
-    // Pozastaví automatické přehrávání
-    function stopAutoPlay() {
-      if (autoPlayInterval) {
-        clearInterval(autoPlayInterval);
-        autoPlayInterval = null;
-        showOverlay('play');
-      }
-    }
-
-    // Přepínání mezi přehráváním a pozastavením
-    function togglePlayPause() {
-      if (autoPlayInterval) {
-        stopAutoPlay();
-      } else {
-        // Před spuštěním autoPlay posunout index na další obrázek
-        currentIndex = (currentIndex + 1) % galleryImages.length; 
-        showImage(currentIndex); // Ukázat nový obrázek
-        startAutoPlay(); // Spustit autoPlay po přepnutí
-      }
-    }
-
-    
-    function showOverlay(type) {
-      const svgPlay = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <path fill="#fff" d="M8 5v14l11-7z"/></svg>`;
-  
-      const svgPause = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <path fill="#fff" d="M6 6h4v12H6zm8 0h4v12h-4z"/></svg>`;
-      playPauseOverlay.innerHTML = `<span>${type === 'pause' ? svgPlay : svgPause}</span>`;
-      playPauseOverlay.className = `play-pause-overlay ${type}`;
-      playPauseOverlay.style.opacity = '1';
-
-      setTimeout(() => {
-        playPauseOverlay.style.opacity = '0';
-      }, 1000);
-    }
-
-    // Aktualizace indikátorů (tečky)
-    function updateDots(index) {
-      const dots = document.querySelectorAll('.dot');
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
-    }
-
-    // Paticka se zobrazuje při scrollování nebo pokud není co scrollovat
-    const footer = document.getElementById('footer');
-    
-    function checkFooterVisibility() {
-      const bodyHeight = document.body.offsetHeight;
-      const windowHeight = window.innerHeight;
-      if (bodyHeight <= windowHeight) {
-        footer.classList.add('show');
-      } else if (window.innerHeight + window.scrollY >= bodyHeight) {
-        footer.classList.add('show');
-      } else {
-        footer.classList.remove('show');
-      }
-    }
-
-    // Události pro klikání na tečky a obrázky
-    document.addEventListener('DOMContentLoaded', () => {
-
-      window.addEventListener('scroll', checkFooterVisibility);
-      window.addEventListener('resize', checkFooterVisibility);
-      checkFooterVisibility();
-
-      // Zobrazení prvního obrázku a teček
-      showImage(currentIndex);
-
-      galleryImages.forEach((img) => {
-        img.addEventListener('click', togglePlayPause);
-      });
-
-      galleryImages.forEach((_, i) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        dot.addEventListener('click', () => {
-          currentIndex = i;
-          showImage(i);
-          stopAutoPlay(); // Zastaví přehrávání
-        });
-        dotsContainer.appendChild(dot);
-      });
-
-      updateDots(currentIndex);
-      startAutoPlay(); // Automatické přehrávání při načtení
-
-    });
-
-  </script>
 </body>
 </html>

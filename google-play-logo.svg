@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 135 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+<svg width="100%" height="100%" viewBox="0 0 135 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g id="artwork">
         <g transform="matrix(1,0,0,1,130,0)">
             <path d="M0,40L-125,40C-127.75,40 -130,37.75 -130,35L-130,5C-130,2.25 -127.75,0 -125,0L0,0C2.75,0 5,2.25 5,5L5,35C5,37.75 2.75,40 0,40" style="fill-rule:nonzero;"/>
@@ -23,8 +23,23 @@
         <g transform="matrix(1,0,0,1,20.7958,7.1411)">
             <path d="M0,12.86L5.51,7.351L-6.46,0.411C-6.895,0.15 -7.403,0 -7.946,0C-9.276,0 -10.398,0.905 -10.725,2.133C-10.725,2.134 -10.726,2.135 -10.726,2.136L0,12.86Z" style="fill:rgb(52,168,83);fill-rule:nonzero;"/>
         </g>
-        <g transform="matrix(8.7,0,0,8.7,98.886,13.1335)">
+        <g>
+            <g transform="matrix(1,0,0,1,41.08,13.134)">
+                <text x="0px" y="0px" style="font-family:'Helvetica';font-size:8.7px;fill:white;">R</text>
+            </g>
+            <g transform="matrix(1,0,0,1,47.132,13.134)">
+                <g>
+                    <text x="0px" y="0px" style="font-family:'Helvetica';font-size:8.7px;fill:white;">O</text>
+                    <g transform="matrix(1,0,0,1,6.537,0)">
+                        <g>
+                            <text x="0px" y="0px" style="font-family:'Helvetica';font-size:8.7px;fill:white;">Z</text>
+                            <g transform="matrix(1,0,0,1,5.084,0)">
+                                <text x="0px" y="0px" style="font-family:'Helvetica';font-size:8.7px;fill:white;">J<tspan x="4.12px 9.692px 15.744px 20.828px 26.401px 28.665px " y="0px 0px 0px 0px 0px 0px ">EĎTE T</tspan>O</text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
         </g>
-        <text x="41.08px" y="13.134px" style="font-family:'Helvetica';font-size:8.7px;fill:white;">R<tspan x="47.132px 53.669px 58.753px 62.873px 68.445px 74.497px 79.581px 85.154px 87.188px 92.119px " y="13.134px 13.134px 13.134px 13.134px 13.134px 13.134px 13.134px 13.134px 13.134px 13.134px ">OZJEĎTE TO</tspan></text>
     </g>
 </svg>
