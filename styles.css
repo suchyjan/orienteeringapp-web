@@ -2,6 +2,10 @@ html {
     overscroll-behavior: none;
     /* Zamezí overscroll efektu */
     user-select: none;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -12,8 +16,6 @@ body {
     overflow-x: hidden;
     overscroll-behavior: none;
     /* Zamezí overscroll efektu */
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
 }
 
 main {
@@ -215,8 +217,6 @@ header {
 }
 
 .intro ul {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
     list-style: none;
     padding: 0;
     font-size: 1rem;
