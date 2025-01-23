@@ -1,9 +1,8 @@
 html {
     overscroll-behavior: none;
-    /* Zamezí overscroll efektu */
-    user-select: none;         /* Standardní */
-    -webkit-user-select: none; /* Chrome, Safari */
-    -moz-user-select: none;    /* Firefox */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
     -ms-user-select: none;
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
@@ -12,19 +11,16 @@ html {
 }
 
 body {
-    /* font-family: Arial, Roboto, sans-serif; */
     font-family: Roboto, Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     overflow-x: hidden;
     overscroll-behavior: none;
-    /* Zamezí overscroll efektu */
 }
 
 main {
     padding-top: 3rem;
-    /* overscroll-behavior: contain; */
 }
 
 .wrapper {
@@ -49,8 +45,6 @@ header {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* gap: 2rem; */
-    /* margin-top: 1rem; */
 }
 
 .download-item {
@@ -80,15 +74,6 @@ header {
     padding-bottom: 0.8rem;
     height: 3rem;
 }
-
-/* 
-.google-play {
-}
-.app-store {
-}
-.qr-code {
-} 
-*/
 
 .container {
     display: flex;
@@ -123,13 +108,11 @@ header {
 .gallery,
 .intro {
     text-align: center;
-    /* margin: 2rem 1rem; */
 }
 
 .qr-code img {
     width: 8rem;
     height: auto;
-    /* border: 1px solid #ccc; */
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -154,7 +137,6 @@ header {
 
 .gallery {
     text-align: center;
-    /* margin-bottom: 0rem; */
     padding-top: 4rem;
 }
 
@@ -166,7 +148,6 @@ header {
     position: relative;
     width: 300px;
     margin: 0 auto;
-    /* overflow: hidden; */
 }
 
 .screenshots {
@@ -178,7 +159,6 @@ header {
     min-width: 300px;
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    /* box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2); */
     border-width: 2px;
     border-style: solid;
     box-sizing: border-box;
@@ -206,7 +186,6 @@ header {
 }
 
 .dot.active {
-    /* background-color: orange; */
     background-color: #F66A29
 }
 
@@ -268,62 +247,39 @@ footer.show {
 .play-pause-overlay {
     position: absolute;
     cursor: pointer;
-    /* Nastaví kurzor na pointer */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100px;
-    /* Šířka kruhu */
     height: 100px;
-    /* Výška kruhu */
     border-radius: 50%;
-    /* Zajistí kruhový tvar */
     background: rgba(0, 0, 0, 0.5);
-    /* Poloprůhledné černé pozadí */
     color: white;
-    /* Barva textu */
-    /* font-size: 40px; */
-    /* Velikost ikony */
-    /* font-weight: bold;  */
-    /* Tučný text pro lepší čitelnost */
     display: flex;
-    /* Flexbox pro zarovnání obsahu */
     align-items: center;
-    /* Svislé zarovnání do středu */
     justify-content: center;
-    /* Vodorovné zarovnání do středu */
     z-index: 10;
-    /* Vrstva nad ostatními prvky */
     pointer-events: none;
     transition: opacity 0.3s ease;
-    /* Hladký přechod opacity */
 }
 
 .play-pause-overlay span {
     display: flex;
-    /* Umožňuje span fungovat jako flexbox */
     align-items: center;
-    /* Svislé zarovnání obrázku */
     justify-content: center;
-    /* Vodorovné zarovnání obrázku */
 }
 
 .play-pause-overlay svg {
     width: 100%;
-    /* Přizpůsobí šířku rodičovskému prvku */
     height: 100%;
-    /* Přizpůsobí výšku rodičovskému prvku */
     object-fit: contain;
-    /* Zachová poměr stran a přizpůsobí obrázek */
 }
 
 .play-pause-overlay.pause {
-    /* color: #0a0; */
     background: rgba(0, 0, 0, 0.2);
 }
 
 .play-pause-overlay.play {
-    /* color: #a00; */
     background: rgba(0, 0, 0, 0.2);
 }
 
@@ -332,39 +288,32 @@ footer.show {
         gap: 4rem;
     }
 
-    /* Prohození pořadí */
     .intro {
-        /* margin-top: 3rem; */
         padding-top: 3rem;
         margin: 0;
         padding-left: 3rem;
         padding-right: 1.8rem;
         order: 1;
-        /* Úvod až jako druhý */
         text-align: left;
-        /* text-align: right; */
-        /* justify-self: flex-end; */
     }
 
     .gallery {
         order: 2;
         padding-right: 3.3rem;
-        /* Galerie jako první */
-        /* justify-self: flex-start; */
     }
 
     .flex-container {
         flex-direction: row;
         justify-content: center;
-        padding-bottom: 6rem
     }
 
     .gallery,
     .intro {
-        /* flex: 1; */
         flex: 0 1 auto;
         margin: 0;
+        padding-bottom: 6rem
     }
+
     /* body {
         -webkit-text-size-adjust: none;
     } */

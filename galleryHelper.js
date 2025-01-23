@@ -78,9 +78,10 @@ const footer = document.getElementById('footer')
 function checkFooterVisibility () {
   const bodyHeight = document.body.offsetHeight
   const windowHeight = window.innerHeight
+  console.log(bodyHeight, windowHeight, window.scrollY)
   if (bodyHeight <= windowHeight) {
     footer.classList.add('show')
-  } else if (window.innerHeight + window.scrollY >= bodyHeight) {
+  } else if (window.innerHeight + window.scrollY + 10>= bodyHeight) {
     footer.classList.add('show')
   } else {
     footer.classList.remove('show')
