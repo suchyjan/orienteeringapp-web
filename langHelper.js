@@ -23,7 +23,7 @@ const currentPath = window.location.pathname
 if (currentPath !== redirectPath) {
   const newUrl = `${window.location.origin}${redirectPath}`
   // DO NOT REDIRECT NOW
-  //window.location.replace(newUrl); // Přesměrování na správnou URL
+  window.location.replace(newUrl); // Přesměrování na správnou URL
 }
 
 // Získání doplňkového jazyka (část za pomlčkou), pokud existuje
