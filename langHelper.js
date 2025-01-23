@@ -1,17 +1,21 @@
 // Detekce preferovaného jazyka uživatele
 const userLanguage = navigator.language || navigator.languages[0] || 'en-US';
 
+//console.log(userLanguage);
+
 // Seznam podporovaných jazyků a jejich cesty
 const supportedLanguages = ['cs', 'en', 'sv', 'fi'];
 const languagePaths = {
-  cs: '/',
+  cs: '/cs',
   en: '/en',
   sv: '/sv',
-  fi: '/fi'
+  fi: '/fi',
 };
 
 // Zjištění hlavního jazyka a přiřazení správné cesty
 const primaryLanguage = userLanguage.split('-')[0].toLowerCase();
+
+/*
 const redirectPath = supportedLanguages.includes(primaryLanguage)
   ? languagePaths[primaryLanguage]
   : languagePaths['en']; // Defaultně angličtina
@@ -20,13 +24,20 @@ const redirectPath = supportedLanguages.includes(primaryLanguage)
 const currentPath = window.location.pathname;
 
 // Zabránění přesměrování, pokud aktuální cesta obsahuje již jazykovou variantu
-const isExplicitLanguagePath = supportedLanguages.some(lang => currentPath.startsWith(`/${lang}`));
+const isExplicitLanguagePath = supportedLanguages.some((lang) =>
+  currentPath.startsWith(`/${lang}`)
+);
 
-// Pokud aktuální cesta není explicitní a neodpovídá detekovanému jazyku, přesměruj
+// Speciální kontrola pro `/cs`, aby nepřesměrovalo a zůstalo na `/`
+// const isCsPath = currentPath === '/cs';
+
+// Pokud aktuální cesta není explicitní, neodpovídá detekovanému jazyku a není `/cs`, přesměruj
+// if (!isExplicitLanguagePath && !isCsPath && currentPath !== redirectPath) {
 if (!isExplicitLanguagePath && currentPath !== redirectPath) {
   const newUrl = `${window.location.origin}${redirectPath}`;
   window.location.replace(newUrl); // Přesměrování na správnou URL
 }
+*/
 
 // Získání doplňkového jazyka (část za pomlčkou), pokud existuje
 const languageVariant = userLanguage.split('-')[1]?.toLowerCase() || primaryLanguage;

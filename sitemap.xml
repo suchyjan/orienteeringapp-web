@@ -4,8 +4,8 @@
 
   <!-- Kanonická stránka v češtině (výchozí verze) -->
   <url>
-    <loc>https://orisym.cz/</loc>
-    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/" />
+    <loc>https://orisym.cz/cs</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/cs" />
     <xhtml:link rel="alternate" hreflang="en" href="https://orisym.cz/en" />
     <xhtml:link rel="alternate" hreflang="sv" href="https://orisym.cz/sv" />
     <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi" />
@@ -15,7 +15,7 @@
   <url>
     <loc>https://orisym.cz/en</loc>
     <xhtml:link rel="canonical" href="https://orisym.cz/en" />
-    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/cs" />
     <xhtml:link rel="alternate" hreflang="en" href="https://orisym.cz/en" />
     <xhtml:link rel="alternate" hreflang="sv" href="https://orisym.cz/sv" />
     <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi" />
@@ -25,7 +25,7 @@
   <url>
     <loc>https://orisym.cz/sv</loc>
     <xhtml:link rel="canonical" href="https://orisym.cz/sv" />
-    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/cs" />
     <xhtml:link rel="alternate" hreflang="en" href="https://orisym.cz/en" />
     <xhtml:link rel="alternate" hreflang="sv" href="https://orisym.cz/sv" />
     <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi" />
@@ -35,7 +35,7 @@
   <url>
     <loc>https://orisym.cz/fi</loc>
     <xhtml:link rel="canonical" href="https://orisym.cz/fi" />
-    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/cs" />
     <xhtml:link rel="alternate" hreflang="en" href="https://orisym.cz/en" />
     <xhtml:link rel="alternate" hreflang="sv" href="https://orisym.cz/sv" />
     <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi" />
