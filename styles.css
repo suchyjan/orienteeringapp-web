@@ -1,7 +1,10 @@
 html {
     overscroll-behavior: none;
     /* Zamezí overscroll efektu */
-    user-select: none;
+    user-select: none;         /* Standardní */
+    -webkit-user-select: none; /* Chrome, Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
