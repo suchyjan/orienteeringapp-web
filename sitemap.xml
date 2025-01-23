@@ -1,7 +1,32 @@
-<url>
-  <loc>https://orisym.cz/</loc>
-  <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://orisym.cz/en"/>
-  <xhtml:link rel="alternate" hreflang="sv" href="https://orisym.cz/sv"/>
-  <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi"/>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://orisym.cz/</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orisym.cz/en"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://orisym.cz/sv"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi"/>
+  </url>
+  <url>
+    <loc>https://orisym.cz/en</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orisym.cz/en"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://orisym.cz/sv"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi"/>
+  </url>
+  <url>
+    <loc>https://orisym.cz/sv</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orisym.cz/en"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://orisym.cz/sv"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi"/>
+  </url>
+  <url>
+    <loc>https://orisym.cz/fi</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://orisym.cz/en"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://orisym.cz/sv"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi"/>
+  </url>
+</urlset>
