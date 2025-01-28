@@ -10,7 +10,7 @@ const languagePaths = {
   en: '/en',
   sv: '/sv',
   fi: '/fi',
-  fi: '/de',
+  de: '/de',
 };
 
 // Zjištění hlavního jazyka a přiřazení správné cesty
