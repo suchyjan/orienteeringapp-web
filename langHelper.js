@@ -4,13 +4,14 @@ const userLanguage = navigator.language || navigator.languages[0] || 'en-US';
 //console.log(userLanguage);
 
 // Seznam podporovaných jazyků a jejich cesty
-const supportedLanguages = ['cs', 'en', 'sv', 'fi', 'de'];
+const supportedLanguages = ['cs', 'en', 'sv', 'fi', 'de', 'fr'];
 const languagePaths = {
   cs: '/cs',
   en: '/en',
   sv: '/sv',
   fi: '/fi',
   de: '/de',
+  fr: '/fr',
 };
 
 // Zjištění hlavního jazyka a přiřazení správné cesty
