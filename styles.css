@@ -81,6 +81,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     padding-right: 1rem;
+    padding-left: 1rem; /* Přidáme levý padding pro symetrii */
 }
 
 .logo {
@@ -93,6 +94,9 @@ header {
     padding: 0;
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap; /* Add this to allow wrapping */
+    justify-content: center; /* Center the items */
+    width: 100%; /* Ensure it takes full width */
 }
 
 .language-switcher li a {
@@ -125,6 +129,12 @@ header {
     padding-bottom: 3rem;
     padding-top: 1.7rem;
     width: auto;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 3rem; /* Zvětšení paddingu pro mobilní zařízení */
+    }
 }
 
 .hero h1 {
