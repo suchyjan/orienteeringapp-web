@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <!-- Kanonická stránka v češtině (výchozí verze) -->
+   <!-- Kanonická stránka v češtině (výchozí verze) -->
   <url>
     <loc>https://orisym.cz/cs/</loc>
     <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/cs/" />
@@ -11,9 +10,10 @@
     <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://orisym.cz/de/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://orisym.cz/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://orisym.cz/it/" />
   </url>
-
-  <!-- Anglická verze -->
+   
+   <!-- Anglická verze -->
   <url>
     <loc>https://orisym.cz/en/</loc>
     <xhtml:link rel="canonical" href="https://orisym.cz/en/" />
@@ -23,9 +23,10 @@
     <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://orisym.cz/de/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://orisym.cz/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://orisym.cz/it/" />
   </url>
-
-  <!-- Švédská verze -->
+   
+   <!-- Švédská verze -->
   <url>
     <loc>https://orisym.cz/sv/</loc>
     <xhtml:link rel="canonical" href="https://orisym.cz/sv/" />
@@ -35,9 +36,10 @@
     <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://orisym.cz/de/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://orisym.cz/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://orisym.cz/it/" />
   </url>
-
-  <!-- Finská verze -->
+   
+   <!-- Finská verze -->
   <url>
     <loc>https://orisym.cz/fi/</loc>
     <xhtml:link rel="canonical" href="https://orisym.cz/fi/" />
@@ -47,9 +49,10 @@
     <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://orisym.cz/de/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://orisym.cz/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://orisym.cz/it/" />
   </url>
-
-  <!-- Německá verze -->
+   
+   <!-- Německá verze -->
   <url>
     <loc>https://orisym.cz/de/</loc>
     <xhtml:link rel="canonical" href="https://orisym.cz/de/" />
@@ -59,9 +62,10 @@
     <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://orisym.cz/de/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://orisym.cz/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://orisym.cz/it/" />
   </url>
-
-  <!-- Francouzská verze -->
+   
+   <!-- Francouzská verze -->
   <url>
     <loc>https://orisym.cz/fr/</loc>
     <xhtml:link rel="canonical" href="https://orisym.cz/fr/" />
@@ -71,6 +75,19 @@
     <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://orisym.cz/de/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://orisym.cz/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://orisym.cz/it/" />
   </url>
 
+   <!-- Italská verze -->
+  <url>
+    <loc>https://orisym.cz/it/</loc>
+    <xhtml:link rel="canonical" href="https://orisym.cz/it/" />
+    <xhtml:link rel="alternate" hreflang="cs" href="https://orisym.cz/cs/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://orisym.cz/en/" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://orisym.cz/sv/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://orisym.cz/fi/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://orisym.cz/de/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://orisym.cz/fr/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://orisym.cz/it/" />
+  </url>
 </urlset>
